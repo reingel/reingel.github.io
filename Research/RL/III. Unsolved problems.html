@@ -3,11 +3,11 @@
 				<html>
 					<head>
 						<meta charset="UTF-8">
-						
-						<title>II. Solved problems in RL</title>
+						<link rel="stylesheet" href="pluginAssets/katex/katex.css">
+						<title>III. Unsolved problems</title>
 					</head>
 					<body>
-						<div class="exported-note"><div class="exported-note-title">II. Solved problems in RL</div>
+						<div class="exported-note"><div class="exported-note-title">III. Unsolved problems</div>
 
 <style>
 		/* https://necolas.github.io/normalize.css/ */
@@ -362,16 +362,31 @@
 				height: auto !important;
 			}
 		}
-	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#ii-solved-problems-in-rl">II. Solved problems in RL</a><ul><li><a href="#1-test">1. test</a></li></ul></li></ul></nav><h1 id="ii-solved-problems-in-rl">II. Solved problems in RL</h1>
-<h2 id="1-test">1. test</h2>
+	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#sample-efficiency">Sample Efficiency</a></li><li><a href="#exploration-and-exploitation">Exploration and Exploitation</a></li><li><a href="#sparse-rewards">Sparse rewards</a></li><li><a href="#credit-assignment-problem">credit assignment problem</a></li><li><a href="#policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution 이 변경되어 policy 변경효과를 계산하기가 어려움</a></li><li><a href="#taxonomy-of-rl">Taxonomy of RL</a></li></ul></nav><h2 id="sample-efficiency">Sample Efficiency</h2>
+<p>강화학습은 순차적 결정 문제</p>
 <ul>
-<li>DP, MC, TD</li>
-<li>Function approximation</li>
-<li>DQN</li>
-<li>AlphaGo, AlphaGo Zero</li>
+<li>High dimensions, continuous</li>
+<li>off-policy 등으로 해결 노력 중</li>
+<li>IRL, Model-based, hierarchical RL 도 하나의 접근방법이 될 수 있음</li>
 </ul>
+<h2 id="exploration-and-exploitation">Exploration and Exploitation</h2>
+<h2 id="sparse-rewards">Sparse rewards</h2>
+<ul>
+<li>intrinsic reward, reward shaping, curiosity, inverse RL 등으로 해결 노력 중</li>
+</ul>
+<h2 id="credit-assignment-problem">credit assignment problem</h2>
+<ul>
+<li>or distal reward problem</li>
+<li>the long term delay between actions and their positive or negative effect on rewards</li>
+<li>See <em>Schulman16-GAE</em></li>
+</ul>
+<h2 id="policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution <span class="joplin-editable"><span class="joplin-source" data-joplin-language="katex" data-joplin-source-open="$" data-joplin-source-close="$">\rho_\pi(s)</span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\rho_\pi(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span></span>이 변경되어 policy 변경효과를 계산하기가 어려움</h2>
+<ul>
+<li>TRPO 등으로 해결 노력 중</li>
+</ul>
+<h2 id="taxonomy-of-rl">Taxonomy of RL</h2>
 <hr>
-<p><a data-from-md data-resource-id='b246e65028ef47629b396d7bd0db7282' title='' href='III. Unsolved problems in RL.html' type=''>III. Unsolved problems in RL</a></p>
+<p><a data-from-md data-resource-id='33524d85bb1240999dd4b7221f15bdad' title='' href='index.html' type=''> Reinforcement Learning</a></p>
 </div></div>
 					</body>
 				</html>

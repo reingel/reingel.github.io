@@ -4,10 +4,10 @@
 					<head>
 						<meta charset="UTF-8">
 						
-						<title>III. Unsolved problems in RL</title>
+						<title>II. Solved problems</title>
 					</head>
 					<body>
-						<div class="exported-note"><div class="exported-note-title">III. Unsolved problems in RL</div>
+						<div class="exported-note"><div class="exported-note-title">II. Solved problems</div>
 
 <style>
 		/* https://necolas.github.io/normalize.css/ */
@@ -362,7 +362,30 @@
 				height: auto !important;
 			}
 		}
-	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#taxonomy-of-rl">Taxonomy of RL</a></li></ul></nav><h2 id="taxonomy-of-rl">Taxonomy of RL</h2>
+	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#1-value-function-methods">1. Value function methods</a><ul><li><a href="#a-dynamic-programming">a. Dynamic Programming</a></li><li><a href="#b-monte-carlo">b. Monte-Carlo</a></li><li><a href="#c-temporal-difference">c. Temporal Difference</a></li></ul></li><li><a href="#2-policy-gradient-methods">2. Policy-gradient methods</a></li><li><a href="#3-function-approximation">3. Function approximation</a></li><li><a href="#4-breakthrough">4. Breakthrough</a></li></ul></nav><p>최적정책을 찾는 방법은 크게 <strong>최적가치함수(optimal value function)</strong> 를 찾은 후 최적정책을 구하는 방법과 <strong>정책경사법(policy-gradient method)</strong> 으로 직접 정책을 구하는 방법으로 구분할 수 있다.</p>
+<h2 id="1-value-function-methods">1. Value function methods</h2>
+<p>최적가치함수를 구하면 각 상태에서 가장 높은 가치를 얻을 것으로 예상되는 행동을 선택하는 방식이 최적정책이 된다는 원리를 이용하는 방법이다.</p>
+<h3 id="a-dynamic-programming">a. Dynamic Programming</h3>
+<p><em>환경모델을 알고 있을 때</em> 현재 상태에서 이동할 수 있는 <em>모든</em> 상태의 가치를 이용하여 현재 상태의 가치를 계산한다. 벨만방정식을 이용한다.</p>
+<h3 id="b-monte-carlo">b. Monte-Carlo</h3>
+<p><em>환경모델을 모를 때</em> 현재 상태부터 프로세스가 종료할 때까지 진행하여 이득을 계산함으로써 가치를 구한다. 프로세스가 종료될 때까지 가치를 구할 수 없다.</p>
+<h3 id="c-temporal-difference">c. Temporal Difference</h3>
+<p><em>환경모델을 모를 때</em> 한 스텝 진행한 샘플로 학습한다.</p>
+<p><img src="resources/50fa61432c6e47e2a291eacd90cf68da.png" alt="84d57cf84662e95395686f94b53f0d05.png"></p>
+<p>Figure 1. DP, MC and TD</p>
+<h2 id="2-policy-gradient-methods">2. Policy-gradient methods</h2>
+<ul>
+<li>PG</li>
+<li>AC</li>
+</ul>
+<h2 id="3-function-approximation">3. Function approximation</h2>
+<h2 id="4-breakthrough">4. Breakthrough</h2>
+<ul>
+<li>DQN</li>
+<li>AlphaGo, AlphaGo Zero</li>
+</ul>
+<hr>
+<p><a data-from-md data-resource-id='b246e65028ef47629b396d7bd0db7282' title='' href='III. Unsolved problems.html' type=''>III. Unsolved problems</a></p>
 </div></div>
 					</body>
 				</html>
