@@ -4,10 +4,10 @@
 					<head>
 						<meta charset="UTF-8">
 						<link rel="stylesheet" href="pluginAssets/katex/katex.css">
-						<title>III. Unsolved problems</title>
+						<title>IV. Latest Research</title>
 					</head>
 					<body>
-						<div class="exported-note"><div class="exported-note-title">III. Unsolved problems</div>
+						<div class="exported-note"><div class="exported-note-title">IV. Latest Research</div>
 
 <style>
 		/* https://necolas.github.io/normalize.css/ */
@@ -17,7 +17,7 @@
 		b,strong{font-weight:bolder}small{font-size:80%}img{border-style:none}
 
 		body {
-			font-size: 15;
+			font-size: 15px;
 			color: #555555;
 			word-wrap: break-word;
 			line-height: 1.6em;
@@ -362,12 +362,29 @@
 				height: auto !important;
 			}
 		}
-	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#sample-efficiency">Sample Efficiency</a></li><li><a href="#exploration-and-exploitation">Exploration and Exploitation</a></li><li><a href="#sparse-rewards">Sparse rewards</a></li><li><a href="#credit-assignment-problem">credit assignment problem</a></li><li><a href="#policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution 이 변경되어 policy 변경효과를 계산하기가 어려움</a></li><li><a href="#taxonomy-of-rl">Taxonomy of RL</a></li></ul></nav><h2 id="sample-efficiency">Sample Efficiency</h2>
+	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#6-model-based">6. Model-based</a></li><li><a href="#on-policy-vs-off-policy">On-policy vs. Off-policy</a></li><li><a href="#7-off-policy">7. Off-policy</a></li><li><a href="#inverse-rl">Inverse RL</a></li><li><a href="#hierarchical">Hierarchical</a></li><li><a href="#transfer-learning">Transfer Learning</a></li><li><a href="#sample-efficiency">Sample Efficiency</a></li><li><a href="#exploration-and-exploitation">Exploration and Exploitation</a></li><li><a href="#sparse-rewards">Sparse rewards</a></li><li><a href="#credit-assignment-problem">credit assignment problem</a></li><li><a href="#policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution 이 변경되어 policy 변경효과를 계산하기가 어려움</a></li><li><a href="#taxonomy-of-rl">Taxonomy of RL</a></li></ul></nav><p>강화학습은 적은 수의 샘플로 좋은 정책을 찾아야 하며, 더 좋은 정책이 있을 수 있으니 가보지 않은 경로를 탐색해야 한다는 어려운 문제가 있다. 이러한 문제를 해결하기 위하여</p>
+<h2 id="6-model-based">6. Model-based</h2>
+<p>정책은 MDP 모델을 아는 상태에서 행동하는 model-based 정책과 그렇지 않은 model-free 정책으로 구분할 수 있다.</p>
+<p>planning, learning</p>
+<h2 id="on-policy-vs-off-policy">On-policy vs. Off-policy</h2>
+<p><img src="resources/8cdebc260bee42698f2155ac7624150c.png" alt="e8ad402e087ce7515f2d3337e3f67afc.png"></p>
+<h2 id="7-off-policy">7. Off-policy</h2>
+<p>최적정책을 찾는 학습방법은 샘플 획득방식에 따라 두 가지로 구분할 수 있다.<br>
+the expected return은 stationary state visitation distribution(아하 ssvd)에 dependant하다. ssvd는 policy에 dependent하다. 즉, policy가 바뀌면 ssvd가 변화하고 결국 expected return이 변경된다.</p>
+<p>s인 env에 a를 주고 s’, r을 받아서 만든 튜플을 샘플이라고 한다. 샘플은 ssvd의 point estimator이다. 즉, 샘플을 많이 얻을수록 ssvd를 정확히 추정할 수 있다.</p>
+<p>샘플은 에이전트와 독립이다.</p>
+<p>on-policy method는 ssvd에 dependent한 학습방법(알고리즘)이다. ssvd는 policy에 따라 변화하므로 이 학습방법은 policy 의존적이다(on-policy). 즉, 학습과정 중 policy가 업데이트 될 때마다 새로운 샘플을 얻어야 한다.</p>
+<p>off-policy method는 ssvd에 비의존적이다. 따라서 policy와 상관없이 해당 env에서 얻은 샘플만 있으면 된다. 결국 sample efficiency가 높다.</p>
+<h2 id="inverse-rl">Inverse RL</h2>
+<h2 id="hierarchical">Hierarchical</h2>
+<h2 id="transfer-learning">Transfer Learning</h2>
+<h2 id="sample-efficiency">Sample Efficiency</h2>
 <p>강화학습은 순차적 결정 문제</p>
 <ul>
 <li>High dimensions, continuous</li>
 <li>off-policy 등으로 해결 노력 중</li>
 <li>IRL, Model-based, hierarchical RL 도 하나의 접근방법이 될 수 있음</li>
+<li>샘플의 분산을 줄임 (GAE)</li>
 </ul>
 <h2 id="exploration-and-exploitation">Exploration and Exploitation</h2>
 <h2 id="sparse-rewards">Sparse rewards</h2>
