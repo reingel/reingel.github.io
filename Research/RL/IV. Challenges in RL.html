@@ -3,11 +3,11 @@
 				<html>
 					<head>
 						<meta charset="UTF-8">
-						<link rel="stylesheet" href="pluginAssets/katex/katex.css">
-						<title>IV. Latest Research</title>
+						
+						<title>IV. Challenges in RL</title>
 					</head>
 					<body>
-						<div class="exported-note"><div class="exported-note-title">IV. Latest Research</div>
+						<div class="exported-note"><div class="exported-note-title">IV. Challenges in RL</div>
 
 <style>
 		/* https://necolas.github.io/normalize.css/ */
@@ -18,7 +18,7 @@
 
 		body {
 			font-size: 15px;
-			color: #555555;
+			color: #32373F;
 			word-wrap: break-word;
 			line-height: 1.6em;
 			background-color: #ffffff;
@@ -210,7 +210,7 @@
 			text-align: left;
 			padding: .5em 1em .5em 1em;
 			font-size: 15;
-			color: #555555;
+			color: #32373F;
 			font-family: 'Avenir', 'Arial', sans-serif;
 		}
 
@@ -284,6 +284,7 @@
 			opacity: 0.7;
 		}
 
+		.jop-tinymce ul.joplin-checklist .checked,
 		.md-checkbox .checkbox-label-checked {
 			opacity: 0.5;
 		}
@@ -362,48 +363,24 @@
 				height: auto !important;
 			}
 		}
-	</style><div id="rendered-md"><nav class="table-of-contents"><ul><li><a href="#6-model-based">6. Model-based</a></li><li><a href="#on-policy-vs-off-policy">On-policy vs. Off-policy</a></li><li><a href="#7-off-policy">7. Off-policy</a></li><li><a href="#inverse-rl">Inverse RL</a></li><li><a href="#hierarchical">Hierarchical</a></li><li><a href="#transfer-learning">Transfer Learning</a></li><li><a href="#sample-efficiency">Sample Efficiency</a></li><li><a href="#exploration-and-exploitation">Exploration and Exploitation</a></li><li><a href="#sparse-rewards">Sparse rewards</a></li><li><a href="#credit-assignment-problem">credit assignment problem</a></li><li><a href="#policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution 이 변경되어 policy 변경효과를 계산하기가 어려움</a></li><li><a href="#taxonomy-of-rl">Taxonomy of RL</a></li></ul></nav><p>강화학습은 적은 수의 샘플로 좋은 정책을 찾아야 하며, 더 좋은 정책이 있을 수 있으니 가보지 않은 경로를 탐색해야 한다는 어려운 문제가 있다. 이러한 문제를 해결하기 위하여</p>
-<h2 id="6-model-based">6. Model-based</h2>
-<p>정책은 MDP 모델을 아는 상태에서 행동하는 model-based 정책과 그렇지 않은 model-free 정책으로 구분할 수 있다.</p>
-<p>planning, learning</p>
-<h2 id="on-policy-vs-off-policy">On-policy vs. Off-policy</h2>
-<p><img src="resources/8cdebc260bee42698f2155ac7624150c.png" alt="e8ad402e087ce7515f2d3337e3f67afc.png"></p>
-<h2 id="7-off-policy">7. Off-policy</h2>
-<p>최적정책을 찾는 학습방법은 샘플 획득방식에 따라 두 가지로 구분할 수 있다.<br>
-the expected return은 stationary state visitation distribution(아하 ssvd)에 dependant하다. ssvd는 policy에 dependent하다. 즉, policy가 바뀌면 ssvd가 변화하고 결국 expected return이 변경된다.</p>
-<p>s인 env에 a를 주고 s’, r을 받아서 만든 튜플을 샘플이라고 한다. 샘플은 ssvd의 point estimator이다. 즉, 샘플을 많이 얻을수록 ssvd를 정확히 추정할 수 있다.</p>
-<p>샘플은 에이전트와 독립이다.</p>
-<p>on-policy method는 ssvd에 dependent한 학습방법(알고리즘)이다. ssvd는 policy에 따라 변화하므로 이 학습방법은 policy 의존적이다(on-policy). 즉, 학습과정 중 policy가 업데이트 될 때마다 새로운 샘플을 얻어야 한다.</p>
-<p>off-policy method는 ssvd에 비의존적이다. 따라서 policy와 상관없이 해당 env에서 얻은 샘플만 있으면 된다. 결국 sample efficiency가 높다.</p>
-<h2 id="inverse-rl">Inverse RL</h2>
-<h2 id="hierarchical">Hierarchical</h2>
-<h2 id="transfer-learning">Transfer Learning</h2>
-<h2 id="sample-efficiency">Sample Efficiency</h2>
-<p>강화학습은 순차적 결정 문제</p>
-<ul>
-<li>High dimensions, continuous</li>
-<li>off-policy 등으로 해결 노력 중</li>
-<li>IRL, Model-based, hierarchical RL 도 하나의 접근방법이 될 수 있음</li>
-<li>샘플의 분산을 줄임 (GAE)</li>
-</ul>
-<h2 id="exploration-and-exploitation">Exploration and Exploitation</h2>
-<h2 id="sparse-rewards">Sparse rewards</h2>
-<ul>
-<li>intrinsic reward, reward shaping, curiosity, inverse RL 등으로 해결 노력 중</li>
-</ul>
-<h2 id="credit-assignment-problem">credit assignment problem</h2>
-<ul>
-<li>or distal reward problem</li>
-<li>the long term delay between actions and their positive or negative effect on rewards</li>
-<li>See <em>Schulman16-GAE</em></li>
-</ul>
-<h2 id="policy가-변경되면-state-visit-distribution-이-변경되어-policy-변경효과를-계산하기가-어려움">policy가 변경되면 state visit distribution <span class="joplin-editable"><span class="joplin-source" data-joplin-language="katex" data-joplin-source-open="$" data-joplin-source-close="$">\rho_\pi(s)</span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ρ</mi><mi>π</mi></msub><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\rho_\pi(s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">π</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span></span></span></span></span>이 변경되어 policy 변경효과를 계산하기가 어려움</h2>
-<ul>
-<li>TRPO 등으로 해결 노력 중</li>
-</ul>
-<h2 id="taxonomy-of-rl">Taxonomy of RL</h2>
+	</style><div id="rendered-md"><nav class="table-of-contents"></nav><p>To be written further.</p>
 <hr>
-<p><a data-from-md data-resource-id='33524d85bb1240999dd4b7221f15bdad' title='' href='index.html' type=''> Reinforcement Learning</a></p>
+<p>강화학습에는 몇 가지 난제가 존재한다.</p>
+<ul>
+<li>Sample efficiency: 강화학습은 적은 수의 샘플로 좋은 정책을 찾아야 하며, 더 좋은 정책이 있을 수 있으니 가보지 않은 경로를 탐색해야 한다는 어려운 문제가 있다.</li>
+<li>Exploration &amp; exploitation</li>
+<li>Sparse rewards</li>
+<li>Credit assignment problem</li>
+</ul>
+<p>많은 계산량이 소요되는 환경으로부터 샘플을 측정하는 횟수를 줄이려는 노력(sample efficiency)의 일환으로 다양한 방법이 시도되고 있다.</p>
+<ul>
+<li>Model-based: 환경 모델에 대한 사전정보를 이용하여 학습속도를 높인다.</li>
+<li>Off-policy: 학습 중인 정책으로 얻은 샘플만을 이용하는 on-policy 방법의 한계를 극복하기 위하여 학습 정책(target policy)과 행동 정책(behavioral policy)을 사용하여 샘플은 행동 정책으로부터 획득하는 off-policy 기법을 사용한다. off-policy 기법의 경우 기존 정책으로 획득한 샘플, 사람의 조작으로 획득한 샘플 등을 활용할 수 있어 샘플 획득수를 줄일 수 있다.</li>
+<li>Imitation learning: 전문가의 행동 데이터로부터 학습을 하면 초기 탐색에 소요되는 시간을 절약할 수 있으며 빠른 시간안에 전문가 수준의 정책을 찾을 수 있다.</li>
+<li>Hierarchical RL: 복잡한 행동은 계층적으로 구성할 수 있다는 아이디어로부터 계층적 정책을 학습하는 알고리즘이 고안되었다.</li>
+</ul>
+<hr>
+<p><a data-from-md data-resource-id='9e01699b1efe4223aca51633f212859a' title='' href='V. Imitation Learning.html' type=''>V. Imitation Learning</a></p>
 </div></div>
 					</body>
 				</html>
