@@ -1,5 +1,5 @@
 ---
-title: "RL: I. Introduction"
+title: "RL: Introduction"
 last_modified_at: 2020-09-27
 categories:
   - 강화학습
@@ -60,8 +60,8 @@ Figure 3. Stochastic policy
 
 $$
 \begin{aligned}
-\sum\limits_{a_t\in A}\pi(a_t\vert s_t)&=1\tag{for discrete action space}
-\int_{a_t\in A}\pi(a_t\vert s_t)da_t&=1\tag{for continuous action space}
+\sum\limits_{a_t\in A}\pi(a_t\vert s_t)&=1&\text{for discrete action space}
+\int_{a_t\in A}\pi(a_t\vert s_t)da_t&=1&\text{for continuous action space}
 \end{aligned}
 $$
 
@@ -92,9 +92,12 @@ Figure 4. Why long-term rewards is important?
 
 정책과 마찬가지로 모델도 **결정론적 모델(deterministic model)** 과 **확률론적 모델(stochastic model)** 로 구분할 수 있다. 결정론적 모델은 현재 상태 $s_t$와 행동 $a_t$에 따라 다음 상태 $s_{t+1}$이 하나로 결정되지만 확률론적 모델은 $s_{t+1}$이 확률변수이며 확률분포 $P(s_{t+1}\vert s_t,a_t)$를 따른다.
 
-$$s_{t+1}=P(s_t,a_t)\tag{deterministic model}$$
-
-$$s_{t+1}\sim P(s_{t+1}\vert s_t,a_t)\tag{stochastic model}$$
+$$
+\begin{aligned}
+s_{t+1}&=P(s_t,a_t)&\text{deterministic model} \\
+s_{t+1}&\sim P(s_{t+1}\vert s_t,a_t)&\text{stochastic model}
+\end{aligned}
+$$
 
 강화학습에서 환경은 주로 **이산시간 MDP(discrete-time Markov Decision Process)** 로 모델링한다. 이산시간 MDP는 이산시간 마로코프 연쇄(discrete-time Markov chain)에 **보상(reward)** 과 선택(decision)을 추가한 모델로써 다음과 같이 *순차적 결정 프로세스(sequential decision process)* 를 모델링하는 데에 사용된다.
 
@@ -109,7 +112,7 @@ Figure 5. Sequential decision process
 
 **초기상태(initial state)** $s_0$에서 행동 $a_0$를 선택하면 보상 $r_1$을 받고 상태 $s_1$으로 변경된다. 다시 행동 $a_1$을 선택하면 보상 $r_2$를 받고 상태 $s_2$로 이동한다. 이러한 과정을 반복하다가 **종료상태(terminal state)** $s_T$에 도달한다. 초기상태부터 종료상태까지의 과정을 **에피소드(episode)** 라고 한다. 에피소드에 끝이 존재하면 에피소딕(episodic)하다고 하며 끝이 없으면 연속적(continuing)이라고 한다. Figure 5와 같이 에피소딕 과정이 종료한 후에도 종료상태를 무한히 재방문한다고 가정하면 에피소딕 과정도 연속적 과정으로 생각할 수 있다.
 
-현재 상태 $s_t$에서 받을 수 있는 이득 $G_t$의 정의는 식 (1)과 같다.^5^ $\gamma\in[0,1]$는 **할인계수(discount factor)** 이며 먼 미래의 보상에 대한 중요도를 줄여주는 역할을 한다. $\gamma$가 0이면 한 스텝 보상 $R_{t+1}$과 같아지며^6^ $\gamma$가 1이면 모든 보상을 동일한 중요도로 더한다는 의미이다. $\gamma^k R_{t+k+1}$을 할인된 보상(discounted reward)이라고 하며 할인계수를 고려한 MDP를 할인된 MDP(discounted MDP)라고 한다.
+현재 상태 $s_t$에서 받을 수 있는 이득 $G_t$의 정의는 식 (1)과 같다.[5] $\gamma\in[0,1]$는 **할인계수(discount factor)** 이며 먼 미래의 보상에 대한 중요도를 줄여주는 역할을 한다. $\gamma$가 0이면 한 스텝 보상 $R_{t+1}$과 같아지며[6] $\gamma$가 1이면 모든 보상을 동일한 중요도로 더한다는 의미이다. $\gamma^k R_{t+k+1}$을 할인된 보상(discounted reward)이라고 하며 할인계수를 고려한 MDP를 할인된 MDP(discounted MDP)라고 한다.
 
 $$G_t\doteq\sum\limits_{k=0}^\infty \gamma^k R_{t+k+1}\tag{1}$$
 
@@ -117,17 +120,15 @@ $$G_t\doteq\sum\limits_{k=0}^\infty \gamma^k R_{t+k+1}\tag{1}$$
 
 종합적으로 말하자면 강화학습에서 주로 다루는 MDP 모델은 이산시간 유한 지평선 할인된 MDP(discrete-time finite-horizon discounted MDP)이다.
 
-형식적으로는 MDP를 튜플(tuple) $<S,A,P,R,\rho_0,\gamma>$로 표현할 수 있다. 여기서 $S$는 상태공간, $A$는 행동공간, $P: S\times A\rightarrow(S\rightarrow [0,1])$^7^은 상태천이(state transition) 모델, $R: S\times A\times S\rightarrow \mathbb{R}$은 보상함수, $\rho_0: S\rightarrow [0,1]$^7^은 초기상태 확률분포, $\gamma\in[0,1]$은 할인계수를 의미한다.
+형식적으로는 MDP를 튜플(tuple) $<S,A,P,R,\rho_0,\gamma>$로 표현할 수 있다. 여기서 $S$는 상태공간, $A$는 행동공간, $P: S\times A\rightarrow(S\rightarrow [0,1])$[7]은 상태천이(state transition) 모델, $R: S\times A\times S\rightarrow \mathbb{R}$은 보상함수, $\rho_0: S\rightarrow [0,1]$[7]은 초기상태 확률분포, $\gamma\in[0,1]$은 할인계수를 의미한다.
 
 **초기상태 확률분포(initial state distribution)** $\rho_0$는 에피소드를 시작할 때 처음 위치하는 상태의 방문확률(visitation probability)을 의미한다. 예를 들어, 테트리스 게임에서 게임을 시작할 때 처음 내려오는 다양한 블록의 상대빈도가 초기상태 확률분포이다.
 
 고정된 정책이 주어지면 장시간 흐른 뒤 각 상태를 방문하는 상대빈도가 일정한 값에 수렴한다. 이를 **정상상태 확률분포(stationary state distribution)** $\rho(s)$라고 한다. 정상상태 확률분포는 초기상태 확률분포에 영향을 받지 않으며 강화학습에서 매우 중요한 개념이다.
 
-^5^ 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
-
-^6^ $0^0=1$로 가정한다.
-
-^7^ 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
+[5] 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
+[6] $0^0=1$로 가정한다.
+[7] 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
 
 > **Why MDP?**
 >
@@ -234,8 +235,8 @@ $$A(s,a)=q_\pi(s,a)-v_\pi(s)$$
 
 $$
 \begin{aligned}
-v^{\pi^*}(s)&\geq v^\pi(s)\text{       }\forall s\in S, \forall \pi\in \Pi
-q^{\pi^*}(s,a)&\geq q^\pi(s,a)\text{       }\forall s\in S, \forall a\in A, \forall \pi\in \Pi
+v^{\pi^*}(s)&\geq v^\pi(s)&\forall s\in S, \forall \pi\in \Pi \\
+q^{\pi^*}(s,a)&\geq q^\pi(s,a)&\forall s\in S, \forall a\in A, \forall \pi\in \Pi
 \end{aligned}
 $$
 
