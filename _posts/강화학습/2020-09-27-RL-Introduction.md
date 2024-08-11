@@ -19,7 +19,7 @@ Figure 1은 에이전트(agent)와 환경(environment)으로 이루어진 강화
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/23912ef8c2524964a12bd48aa0f68b2f.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/23912ef8c2524964a12bd48aa0f68b2f.png" | relative_url}}' width="500"><br>
 <br>
 Figure 1. Basic architecture of RL
 <br>
@@ -36,7 +36,7 @@ Figure 1. Basic architecture of RL
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/aba671db24e54acaa3fd459a05db6a07.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/aba671db24e54acaa3fd459a05db6a07.png" | relative_url}}' width="500"><br>
 <br>
 FIgure 2. Deterministic policy
 <br>
@@ -54,7 +54,7 @@ $$
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/422f83a6a1fc49f1bf40b30fc017215e.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/422f83a6a1fc49f1bf40b30fc017215e.png" | relative_url}}' width="500"><br>
 <br>
 Figure 3. Stochastic policy
 <br>
@@ -81,7 +81,7 @@ $$
 > 
 >
 <center>
-  <img src='{{"/assets/img/강화학습/db0caef7968f44eebade33948d06b80b.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/db0caef7968f44eebade33948d06b80b.png" | relative_url}}' width="500"><br>
 <br>
 Figure 4. Why long-term rewards is important?
 <br>
@@ -106,7 +106,7 @@ $$
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/29cf4ab373af466d87614f7fbc660b02.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/29cf4ab373af466d87614f7fbc660b02.png" | relative_url}}' width="500"><br>
 <br>
 Figure 5. Sequential decision process
 <br>
@@ -196,7 +196,7 @@ v_{\pi}(s) &\doteq \mathbb{E}_\pi[G_t\vert S_t=s] \\
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/1ddd0735ffe5480390ded1cf3e06322e.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/1ddd0735ffe5480390ded1cf3e06322e.png" | relative_url}}' width="500"><br>
 <br>
 Figure 6. Backup diagram for state value
 <br>
@@ -219,7 +219,7 @@ Figure 7은 행동가치 벨만방정식을 표현한 백업 다이어그램이�
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/75273f616c54454fb7aa121162fe3ec9.png" | relative_url}}' width="800"><br>
+  <img src='{{"/assets/img/강화학습/75273f616c54454fb7aa121162fe3ec9.png" | relative_url}}' width="500"><br>
 <br>
 Figure 7. Backup diagram for action value
 <br>
