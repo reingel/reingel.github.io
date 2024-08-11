@@ -43,9 +43,12 @@ FIgure 2. Deterministic policy
 <br>
 </center>
 
-$$Pr(A_t=\mu(s_t))=1$$
-
-$$Pr(A_t\neq\mu(s_t))=0$$
+$$
+\begin{aligned}
+Pr(A_t=\mu(s_t))&=1 \\
+Pr(A_t\neq\mu(s_t))&=0
+\end{aligned}
+$$
 
 확률론적 정책에서는 행동 $a_t$가 확률변수(random variable)이며 확률분포(probability distribution) $\pi(a_t\vert s_t)=Pr(A_t=a_t\vert S_t=s_t)$를 따른다.[2,3] 따라서 확률분포로부터 하나의 행동을 결정하기 위한 과정[4]이 추가적으로 필요하다. Figure 3은 확률론적 정책의 예이다. 위의 그래프는 이산 행동공간, 아래 그래프는 연속 행동공간에서의 확률분포이다. 합 또는 적분이 1이다.
 
@@ -60,7 +63,7 @@ Figure 3. Stochastic policy
 
 $$
 \begin{aligned}
-\sum\limits_{a_t\in A}\pi(a_t\vert s_t)&=1&\text{for discrete action space}
+\sum\limits_{a_t\in A}\pi(a_t\vert s_t)&=1&\text{for discrete action space} \\
 \int_{a_t\in A}\pi(a_t\vert s_t)da_t&=1&\text{for continuous action space}
 \end{aligned}
 $$
