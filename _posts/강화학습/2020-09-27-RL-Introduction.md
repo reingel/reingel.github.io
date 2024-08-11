@@ -68,11 +68,6 @@ $$
 \end{aligned}
 $$
 
-[^1] 결정론적 정책은 $\mu$, 확률론적 정책은 $\pi$로 표기한다.
-[^2] $a_t\sim\pi(a_t\vert s_t)$
-[^3] 대문자 $S_t$, $A_t$는 확률변수를, 소문자 $s_t$, $a_t$는 샘플(표본)을 의미한다.
-[^4] 주로 확률분포 $\pi(a_t\vert s_t)$로부터 $a_t$를 샘플링(sampling)하는 방법을 사용한다.
-
 > **Why Long-term Rewards?**
 > 
 > 강화학습은 장기적 보상 합의 기대값(the expected sum of long-term rewards)을 최대화하기 위하여 에이전트의 정책을 학습하는 과정이라고 하였다. 왜 단기적인 보상이 아닌 장기적인 보상의 합을 최대화할까?
@@ -129,9 +124,6 @@ $$G_t\doteq\sum\limits_{k=0}^\infty \gamma^k R_{t+k+1}\tag{1}$$
 
 고정된 정책이 주어지면 장시간 흐른 뒤 각 상태를 방문하는 상대빈도가 일정한 값에 수렴한다. 이를 **정상상태 확률분포(stationary state distribution)** $\rho(s)$라고 한다. 정상상태 확률분포는 초기상태 확률분포에 영향을 받지 않으며 강화학습에서 매우 중요한 개념이다.
 
-[^5] 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
-[^6] $0^0=1$로 가정한다.
-[^7] 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
 
 > **Why MDP?**
 >
@@ -274,3 +266,12 @@ MDP의 최적정책을 찾기 위하여 모든 경로를 탐색하는 것은 바
 	- DDPG{Lillicrap.2015}, A3C, TRPO{Schulman.2015} PPO{Schulman.2017} 등 유명
 	- OpenAI John Schulman의 PPO 승리{Andrychowicz.2020}
 - 현재: Sergey Levine (UC Berkely) 등이 로봇팔 제어를 포함하여 활발한 연구 진행 중
+
+
+[^1]: 결정론적 정책은 $\mu$, 확률론적 정책은 $\pi$로 표기한다.
+[^2]: $a_t\sim\pi(a_t\vert s_t)$
+[^3]: 대문자 $S_t$, $A_t$는 확률변수를, 소문자 $s_t$, $a_t$는 샘플(표본)을 의미한다.
+[^4]: 주로 확률분포 $\pi(a_t\vert s_t)$로부터 $a_t$를 샘플링(sampling)하는 방법을 사용한다.
+[^5]: 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
+[^6]: $0^0=1$로 가정한다.
+[^7]: 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
