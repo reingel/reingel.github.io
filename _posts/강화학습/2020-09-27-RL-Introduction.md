@@ -32,7 +32,7 @@ Figure 1. Basic architecture of RL
 
 주어진 $s_t$에 대하여 $a_t$를 결정하는 에이전트의 행동방식을 **정책(policy)** 이라고 한다. 테트리스 게임에서 블록의 쌓여있는 형태와 내려오는 블록의 모양을 $s_t$라고 한다면 내려오는 블록을 좌우로 이동시키기 위한 명령을 $a_t$라고 할 수 있다. 정책은 높은 점수를 얻기 위하여 블록을 이동하는 방법이라고 할 수 있다.
 
-정책은 **결정론적 정책(deterministic policy)**{Silver.2014}과 **확률론적 정책(stochastic policy)**{Sutton.2000}으로 구분할 수 있다. 결정론적 정책은 주어진 상태 $s_t$에 대하여 결정된 행동 $a_t=\mu(s_t)$를 출력한다.[1] Figure 2는 결정론적 정책의 예를 나타낸 그림이다. 행동공간에서 하나의 행동 $\mu(s_t)$에 대한 확률이 1이고 나머지 행동에 대한 확률은 0이다.
+정책은 **결정론적 정책(deterministic policy)**{Silver.2014}과 **확률론적 정책(stochastic policy)**{Sutton.2000}으로 구분할 수 있다. 결정론적 정책은 주어진 상태 $s_t$에 대하여 결정된 행동 $a_t=\mu(s_t)$를 출력한다.[^1] Figure 2는 결정론적 정책의 예를 나타낸 그림이다. 행동공간에서 하나의 행동 $\mu(s_t)$에 대한 확률이 1이고 나머지 행동에 대한 확률은 0이다.
 
 
 <center>
@@ -50,7 +50,7 @@ Pr(A_t\neq\mu(s_t))&=0
 \end{aligned}
 $$
 
-확률론적 정책에서는 행동 $a_t$가 확률변수(random variable)이며 확률분포(probability distribution) $\pi(a_t\vert s_t)=Pr(A_t=a_t\vert S_t=s_t)$를 따른다.[2,3] 따라서 확률분포로부터 하나의 행동을 결정하기 위한 과정[4]이 추가적으로 필요하다. Figure 3은 확률론적 정책의 예이다. 위의 그래프는 이산 행동공간, 아래 그래프는 연속 행동공간에서의 확률분포이다. 합 또는 적분이 1이다.
+확률론적 정책에서는 행동 $a_t$가 확률변수(random variable)이며 확률분포(probability distribution) $\pi(a_t\vert s_t)=Pr(A_t=a_t\vert S_t=s_t)$를 따른다.[^2] [^3] 따라서 확률분포로부터 하나의 행동을 결정하기 위한 과정[^4]이 추가적으로 필요하다. Figure 3은 확률론적 정책의 예이다. 위의 그래프는 이산 행동공간, 아래 그래프는 연속 행동공간에서의 확률분포이다. 합 또는 적분이 1이다.
 
 
 <center>
@@ -68,10 +68,10 @@ $$
 \end{aligned}
 $$
 
-[1] 결정론적 정책은 $\mu$, 확률론적 정책은 $\pi$로 표기한다.
-[2] $a_t\sim\pi(a_t\vert s_t)$
-[3] 대문자 $S_t$, $A_t$는 확률변수를, 소문자 $s_t$, $a_t$는 샘플(표본)을 의미한다.
-[4] 주로 확률분포 $\pi(a_t\vert s_t)$로부터 $a_t$를 샘플링(sampling)하는 방법을 사용한다.
+[^1] 결정론적 정책은 $\mu$, 확률론적 정책은 $\pi$로 표기한다.
+[^2] $a_t\sim\pi(a_t\vert s_t)$
+[^3] 대문자 $S_t$, $A_t$는 확률변수를, 소문자 $s_t$, $a_t$는 샘플(표본)을 의미한다.
+[^4] 주로 확률분포 $\pi(a_t\vert s_t)$로부터 $a_t$를 샘플링(sampling)하는 방법을 사용한다.
 
 > **Why Long-term Rewards?**
 > 
@@ -115,7 +115,7 @@ Figure 5. Sequential decision process
 
 **초기상태(initial state)** $s_0$에서 행동 $a_0$를 선택하면 보상 $r_1$을 받고 상태 $s_1$으로 변경된다. 다시 행동 $a_1$을 선택하면 보상 $r_2$를 받고 상태 $s_2$로 이동한다. 이러한 과정을 반복하다가 **종료상태(terminal state)** $s_T$에 도달한다. 초기상태부터 종료상태까지의 과정을 **에피소드(episode)** 라고 한다. 에피소드에 끝이 존재하면 에피소딕(episodic)하다고 하며 끝이 없으면 연속적(continuing)이라고 한다. Figure 5와 같이 에피소딕 과정이 종료한 후에도 종료상태를 무한히 재방문한다고 가정하면 에피소딕 과정도 연속적 과정으로 생각할 수 있다.
 
-현재 상태 $s_t$에서 받을 수 있는 이득 $G_t$의 정의는 식 (1)과 같다.[5] $\gamma\in[0,1]$는 **할인계수(discount factor)** 이며 먼 미래의 보상에 대한 중요도를 줄여주는 역할을 한다. $\gamma$가 0이면 한 스텝 보상 $R_{t+1}$과 같아지며[6] $\gamma$가 1이면 모든 보상을 동일한 중요도로 더한다는 의미이다. $\gamma^k R_{t+k+1}$을 할인된 보상(discounted reward)이라고 하며 할인계수를 고려한 MDP를 할인된 MDP(discounted MDP)라고 한다.
+현재 상태 $s_t$에서 받을 수 있는 이득 $G_t$의 정의는 식 (1)과 같다.[^5] $\gamma\in[0,1]$는 **할인계수(discount factor)** 이며 먼 미래의 보상에 대한 중요도를 줄여주는 역할을 한다. $\gamma$가 0이면 한 스텝 보상 $R_{t+1}$과 같아지며[^6] $\gamma$가 1이면 모든 보상을 동일한 중요도로 더한다는 의미이다. $\gamma^k R_{t+k+1}$을 할인된 보상(discounted reward)이라고 하며 할인계수를 고려한 MDP를 할인된 MDP(discounted MDP)라고 한다.
 
 $$G_t\doteq\sum\limits_{k=0}^\infty \gamma^k R_{t+k+1}\tag{1}$$
 
@@ -123,15 +123,15 @@ $$G_t\doteq\sum\limits_{k=0}^\infty \gamma^k R_{t+k+1}\tag{1}$$
 
 종합적으로 말하자면 강화학습에서 주로 다루는 MDP 모델은 이산시간 유한 지평선 할인된 MDP(discrete-time finite-horizon discounted MDP)이다.
 
-형식적으로는 MDP를 튜플(tuple) $<S,A,P,R,\rho_0,\gamma>$로 표현할 수 있다. 여기서 $S$는 상태공간, $A$는 행동공간, $P: S\times A\rightarrow(S\rightarrow [0,1])$[7]은 상태천이(state transition) 모델, $R: S\times A\times S\rightarrow \mathbb{R}$은 보상함수, $\rho_0: S\rightarrow [0,1]$[7]은 초기상태 확률분포, $\gamma\in[0,1]$은 할인계수를 의미한다.
+형식적으로는 MDP를 튜플(tuple) $<S,A,P,R,\rho_0,\gamma>$로 표현할 수 있다. 여기서 $S$는 상태공간, $A$는 행동공간, $P: S\times A\rightarrow(S\rightarrow [0,1])$[^7]은 상태천이(state transition) 모델, $R: S\times A\times S\rightarrow \mathbb{R}$은 보상함수, $\rho_0: S\rightarrow [0,1]$[^7]은 초기상태 확률분포, $\gamma\in[0,1]$은 할인계수를 의미한다.
 
 **초기상태 확률분포(initial state distribution)** $\rho_0$는 에피소드를 시작할 때 처음 위치하는 상태의 방문확률(visitation probability)을 의미한다. 예를 들어, 테트리스 게임에서 게임을 시작할 때 처음 내려오는 다양한 블록의 상대빈도가 초기상태 확률분포이다.
 
 고정된 정책이 주어지면 장시간 흐른 뒤 각 상태를 방문하는 상대빈도가 일정한 값에 수렴한다. 이를 **정상상태 확률분포(stationary state distribution)** $\rho(s)$라고 한다. 정상상태 확률분포는 초기상태 확률분포에 영향을 받지 않으며 강화학습에서 매우 중요한 개념이다.
 
-[5] 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
-[6] $0^0=1$로 가정한다.
-[7] 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
+[^5] 보상 $R_t$는 확률변수를, $r_t$는 샘플을 의미한다.
+[^6] $0^0=1$로 가정한다.
+[^7] 연속상태공간일 때는 $S\rightarrow\mathbb{R}^+$ ($\mathbb{R}^+$= 양의 실수의 집합)으로 표현한다.
 
 > **Why MDP?**
 >
