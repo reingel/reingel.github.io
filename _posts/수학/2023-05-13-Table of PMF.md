@@ -9,7 +9,7 @@ use_math: true
 classes: wide
 ---
 
-||probability mass function<br>$f(x)$|argument and parameter(s)|Moment-generating function<br>$M_{X}\left( t \right) = E\left( e^{\text{tX}} \right)$|Moments</br>$\mu = E\left( X \right) = \sum_{x}^{}{x \cdot f(x)}$<br>$\sigma^{2} = \text{Var}\left( X \right) = \sum_{x}^{}{\left( x - \mu \right)^{2} \cdot f\left( x \right)}$|Remark|Corresponding of continuous distributions|R|
+||probability mass function<br>$f(x)$|argument and parameter(s)|Moment-generating function<br>$M_{X}\left( t \right) = E\left( e^{\text{tX}} \right)$|Moments<br>$\mu = E\left( X \right) = \sum_{x}^{}{x \cdot f(x)}$<br>$\sigma^{2} = \text{Var}\left( X \right) = \sum_{x}^{}{\left( x - \mu \right)^{2} \cdot f\left( x \right)}$|Remark|Corresponding of continuous distributions|R|
 |:-|:-|:-|:-|:-|:-|:-|:-|
 |discrete uniform distribution|$f\left( x \right) = \frac{1}{k}$<br>for $x = x_{1},\ x_{2},\ \cdots,\ x_{k}$<br>where $x_{i} \neq x_{j}$ when $i \neq j$|$k = 1,\ 2,\ 3,\ \cdots$|$M_{X}\left( t \right) = \frac{e^{t}\left( 1 - e^{\text{kt}} \right)}{k\left( 1 - e^{t} \right)}$|If $x = 1,\ 2,\ 3,\ \cdots,\ k$<br>$\mu = \frac{k + 1}{2}$<br>$\sigma^{2} = \frac{k^{2} - 1}{12}$||||
 |Bernoulli distribution|$f\left( x;\ \theta \right) = \theta^{x}\left( 1 - \theta \right)^{1 - x}$<br>for $x = 0,\ 1$|$x$ (no. of success)<br>$0 \leq \theta \leq 1$|$M_{X}\left( t \right) = 1 + \theta\left( e^{t} - 1 \right)$|$\mu = \theta$<br>$\sigma^{2} = \theta(1 - \theta)$|Bernoulli distribution with $n = 1$|||
@@ -21,7 +21,7 @@ classes: wide
 
 [^1]: $f(x;\ \theta) + f(x;\ \theta) + \cdots + f(x;\ \theta)$<br>$\rightarrow$ sum of $n$ Bernoulli distributions
 
-[^2]: The number of trials needed to get the $k$th success = k - 1 number of successes on $x - 1$ number of trials and 1 success of Bernoulli distributions
+[^2]: The number of trials needed to get the $k$th success = $k - 1$ number of successes on $x - 1$ number of trials and $1$ success of Bernoulli distributions
 
 [^3]: Infinite number of Bernoulli distributions within a range<br>($\lambda$ = the rate at which the events occur) <br>Approximation of Bernoulli distributions when $n$ is large
 
