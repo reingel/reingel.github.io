@@ -19,6 +19,8 @@ classes: wide
 |hypergeometric distribution|$h\left( x;n,\ N,\ M \right) = \frac{\begin{pmatrix} M \\ x \\ \end{pmatrix}\begin{pmatrix} N - M \\ n - x \\ \end{pmatrix}}{\begin{pmatrix} N \\ n \\ \end{pmatrix}}$<br>for $x = 0,\ 1,\ 2,\ \cdots,\ n$, $x \leq M$ and $n - x \leq N - M$|$x$ (no. of sampled success elements)<br>$n$ (no. of sampling)<br>$N$ (no. of total elements)<br>$M$ (no. of total success elements)|*fairly complex*|$\mu = \frac{\text{nM}}{N}$<br>$\sigma^{2} = \frac{\text{nM}\left( N - M \right)\left( N - n \right)}{N^{2}\left( N - 1 \right)}$||||
 |Poisson distribution|$p\left( x;\ \lambda \right) = \frac{\lambda^{x}e^{- \lambda}}{x!}$<br>for $x = 0,\ 1,\ 2,\ \cdots$|$x$ (no. of successes within a range)<br>$\lambda > 0$|$M_{X}\left( t \right) = e^{\lambda(e^{t} - 1)}$|$\mu = \lambda$<br>$\sigma^{2} = \lambda$|[^3]||\[dpqr\]pois(x, lambda)|
 
+---
+
 [^1]: $f(x;\ \theta) + f(x;\ \theta) + \cdots + f(x;\ \theta)$<br>$\rightarrow$ sum of $n$ Bernoulli distributions
 
 [^2]: The number of trials needed to get the $k$th success = $k - 1$ number of successes on $x - 1$ number of trials and $1$ success of Bernoulli distributions

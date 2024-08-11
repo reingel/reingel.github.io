@@ -267,6 +267,7 @@ MDP의 최적정책을 찾기 위하여 모든 경로를 탐색하는 것은 바
 	- OpenAI John Schulman의 PPO 승리{Andrychowicz.2020}
 - 현재: Sergey Levine (UC Berkely) 등이 로봇팔 제어를 포함하여 활발한 연구 진행 중
 
+---
 
 [^1]: 결정론적 정책은 $\mu$, 확률론적 정책은 $\pi$로 표기한다.
 [^2]: $a_t\sim\pi(a_t\vert s_t)$
