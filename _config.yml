@@ -106,8 +106,8 @@ analytics:
 author:
   name             : "Soonkyu Jeong"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "재미있게"
-  location         : "Sejong, Korea"
+  bio              : "재미있게 살자"
+  location         : "South Korea"
   email            : "reingel@gmail.com"
   links:
     - label: "Email"
