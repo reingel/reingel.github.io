@@ -35,6 +35,12 @@ layout: default
           </h1>{% endif %}
           {% include page__meta.html %}
         </header>
+        <div style="text-align: center;">
+          <a href="https://hits.seeyoufarm.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"target="_blank">
+          <img 
+              <a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Freingel.github.com&count_bg=%23000000&title_bg=%23666666&icon=&icon_color=%23E7E7E7&title=views&edge_flat=true"/></a>
+          </a>
+        </div>
       {% endunless %}
 
       <section class="page__content e-content" itemprop="text">
