@@ -31,7 +31,6 @@
         <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/과학">과학 ({{ site.categories['과학'].size }})</a></span>
         <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/코딩">코딩 ({{ site.categories['코딩'].size }})</a></span>
         <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/강화학습">강화학습 ({{ site.categories['강화학습'].size }})</a></span>
-        <span class="nav__sub-title" v-on:click='togglec()'><a href="/categories/日本語">日本語 ({{ site.categories['日本語'].size }})</a></span>
 
       </li>
   </ul>
