@@ -9,6 +9,8 @@ use_math: true
 classes: wide
 ---
 
+$u\left( x;\ \alpha,\ \beta \right) = \left\{ \begin{aligned} \frac{1}{\beta - \alpha} & \mathrm{\text{for~}}\alpha < x < \beta \\ 0 & \mathrm{\text{elsewhere}} \end{aligned} \right)$
+$$u\left( x;\ \alpha,\ \beta \right) = \left\{ \begin{aligned} \frac{1}{\beta - \alpha} & \mathrm{\text{for~}}\alpha < x < \beta \\ 0 & \mathrm{\text{elsewhere}} \end{aligned} \right)$$
 
 ||probability density function|argument and parameter(s)|Moment-generating function<br>$M_{X}\left( t \right) = E(e^{\text{tX}})$|Moments<br>$\mu = E\left( X \right) = \int_{- \infty}^{\infty}{x \cdot f\left( x \right)\text{dx}}$<$\sigma^{2} = \text{Var}\left( X \right) = \int_{- \infty}^{\infty}{\left( x - \mu \right)^{2} \cdot f\left( x \right)\text{dx}}$|Random variable generator|Remark|Corresponding of discrete distributions|R|
 |:-|:-|:-|:-|:-|:-|:-|:-|:-|
