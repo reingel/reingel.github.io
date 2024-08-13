@@ -1,5 +1,5 @@
 ---
-title: "RL: Value function method"
+title: "RL: Value function methods"
 last_modified_at: 2020-09-28
 categories:
   - 강화학습
