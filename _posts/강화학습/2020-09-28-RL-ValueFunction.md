@@ -118,7 +118,7 @@ Table 3. Estimator of TD(0), Sarsa, and Q-learning
 
 |TD(0)|Sarsa|Q-learning|
 |:-:|:-:|:-:|
-|<img src='{{"/assets/img/강화학습/50fa61432c6e47e2a291eacd90cf68da.png" | relative_url}}' width="500">|<img src='{{"/assets/img/강화학습/50fa61432c6e47e2a291eacd90cf68da.png" | relative_url}}' width="500">|<img src='{{"/assets/img/강화학습/50fa61432c6e47e2a291eacd90cf68da.png" | relative_url}}' width="500">|
+|<img src='{{"/assets/img/강화학습/a4f1f238b85846cdba65ec7a4e85db85.png" | relative_url}}' width="500">|<img src='{{"/assets/img/강화학습/50f99c87e1ed40f38ced8ddd20ef081f.png" | relative_url}}' width="500">|<img src='{{"/assets/img/강화학습/dfc0914fb1e7417f9622ede9cbead6cc.png" | relative_url}}' width="500">|
 
 Figure 3. Backup diagrams of TD(0), Sarsa, and Q-learning
 
