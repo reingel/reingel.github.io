@@ -52,7 +52,7 @@ $$\begin{aligned}
 &=\mathbb{E}_\pi\left[q_\pi(S_t,A_t)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(A_t|S_t)\right] \\
 \end{aligned}\tag{3}$$
 
-결국 $q_\pi(s,a)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a|s)$를 $\nabla_{\mathbf{\theta}}J(\mathbf{\theta})$의 추정량으로 사용할 수 있다. 즉, 에피소드 경로 샘플로부터 $q_\pi(s,a)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a|s)$를 계산한 값으로 성능지표의 경사를 확률론적(stochastic)으로 구할 수 있으며 식 (1)을 반복함으로써 최적정책의 파라미터를 구할 수 있다.
+결국 $q_\pi(s,a)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a\vert s)$를 $\nabla_{\mathbf{\theta}}J(\mathbf{\theta})$의 추정량으로 사용할 수 있다. 즉, 에피소드 경로 샘플로부터 $q_\pi(s,a)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a\vert s)$를 계산한 값으로 성능지표의 경사를 확률론적(stochastic)으로 구할 수 있으며 식 (1)을 반복함으로써 최적정책의 파라미터를 구할 수 있다.
 
 ## 2. Meaning of terms
 앞에서 $q_\pi(s,a)\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a|s)$이 목적함수의 경사값의 추정량으로 사용가능하다는 사실을 알게 되었다. 여기서 $\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a|s)$는 상태 $s$일 때 행동 $a$를 선택할 확률 $\pi_\theta$의 $\log$ 값을 파라미터 $\theta$에 대하여 미분한 값이다. $\log$는 단조증가 함수이므로 $\pi_\theta$와 $\log\pi_\theta$의 변화하는 방향은 동일하다. $q_\pi(s,a)$는 정책 $\pi_\theta$에 따라 상태 $s$에서 행동 $a$를 선택할 때 얻을 수 있는 행동가치이다. $q_\pi(s,a)$와 $\nabla_{\mathbf{\theta}}\log\pi_{\theta}(a|s)$를 곱한다는 의미는 상태 $s$일 때 행동 $a$를 선택할 확률을 행동가치로 weighting을 조절한 값으로 파라미터 경사를 계산한다는 의미이다. 즉, 행동가치가 높을 경우 행동 $a$를 선택할 확률을 높이고, 행동가치가 낮을 경우 행동 $a$를 선택할 확률을 낮춘다는 의미이다. 아래에 설명할 어드밴티지 $A_\pi$를 이용하면 상태 $s$에서 행동 $a$를 선택할 때 양수 또는 음수의 상대가치를 곱하게 된다. 양수이면 상태 $s$일 때 행동 $a$를 선택할 확률을 높이고 반대로 음수이면 이를 낮추게 된다.
@@ -142,6 +142,6 @@ Figure 2. Deterministic Policy-Gradient (DPG)
 </center>
 
 ---
-[^1]: 이산행동공간을 다루는 실제 강화학습에서는 $Q_\pi(a_t|s_t)$를 $\mathbf{Q}_\pi(s_t)$ 형태로 변형하여 모든 행동에 대한 확률분포를 벡터형태로 한 번에 받을 수 있다. 하지만 연속행동공간인 경우 상태와 행동을 입력하면 그에 대한 가치를 얻는 $Q_\pi(s_t,a_t)$의 형태로 구성할 수 밖에 없다. 이러한 경우 $\text{argmax}_{a}Q_\pi(s_t,a)$를 구하기 위하여 함수최적화 문제를 풀어야 한다.
+[^1]: 이산행동공간을 다루는 실제 강화학습에서는 $Q_\pi(a_t\vert s_t)$를 $\mathbf{Q}_\pi(s_t)$ 형태로 변형하여 모든 행동에 대한 확률분포를 벡터형태로 한 번에 받을 수 있다. 하지만 연속행동공간인 경우 상태와 행동을 입력하면 그에 대한 가치를 얻는 $Q_\pi(s_t,a_t)$의 형태로 구성할 수 밖에 없다. 이러한 경우 $\text{argmax}_{a}Q_\pi(s_t,a)$를 구하기 위하여 함수최적화 문제를 풀어야 한다.
 [^2]: $v_\pi(s_0)=v_{\pi_{\theta}}(s_0)$
 [^3]: $\mathbb{E}_\pi=\mathbb{E}_{\pi_{\theta}}$
