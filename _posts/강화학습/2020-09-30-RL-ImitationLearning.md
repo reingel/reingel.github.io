@@ -24,7 +24,7 @@ classes: wide
 
 $$V_R(\pi)=\mathbb{E}_{\pi}\left[R(s,a)\right]\tag{1}$$
 
-여기서 $t\ge0$에 대하여 $s_0\sim p_0$ (초기상태분포), $a_t\sim\pi(\cdot|s_t)$ (정책), $s_{t+1}\sim P(\cdot|s_t,a_t)$ (환경모델)이며 $\mathbb{E}_{\pi}\left[R(s,a)\right]\triangleq\mathbb{E}\left[\sum_{t=0}^\infty\gamma^t R(s_t,a_t)\right]$으로 정의된다.
+여기서 $t\ge0$에 대하여 $s_0\sim p_0$ (초기상태분포), $a_t\sim\pi(\cdot\vert s_t)$ (정책), $s_{t+1}\sim P(\cdot\vert s_t,a_t)$ (환경모델)이며 $\mathbb{E}_{\pi}\left[R(s,a)\right]\triangleq\mathbb{E}\left[\sum_{t=0}^\infty\gamma^t R(s_t,a_t)\right]$으로 정의된다.
 
 문장 A는 아래의 두 문장으로 분리할 수 있다.
 
@@ -54,7 +54,7 @@ $$\max_R\min_\pi V_R(\pi_E)-V_R(\pi)\tag{4}$$
 
 $$\max_{c\in\mathcal{C}}\left(\min_{\pi\in\Pi}-H(\pi)+\mathbb{E}_{\pi}[c(s,a)]\right)-\mathbb{E}_{\pi_E}[c(s,a)]\tag{5}$$
 
-여기서 $c$는 비용함수, $\mathcal{C}$는 비용함수공간, $\Pi$는 정책공간이며 $\gamma$-할인 엔트로피가 $H(\pi)\triangleq\mathbb{E}_{\pi}[-\log\pi(a|s)]$로 정의된다. 보상이 비용으로 변경되면서 전문가 항(term)과 학습자 항의 부호가 바뀐 것에 주의해야 한다.
+여기서 $c$는 비용함수, $\mathcal{C}$는 비용함수공간, $\Pi$는 정책공간이며 $\gamma$-할인 엔트로피가 $H(\pi)\triangleq\mathbb{E}_{\pi}[-\log\pi(a\vert s)]$로 정의된다. 보상이 비용으로 변경되면서 전문가 항(term)과 학습자 항의 부호가 바뀐 것에 주의해야 한다.
 
 동일한 비용(보상)을 얻는 정책은 유일하지 않으므로(ill-posed problem) 적절한 정규화(regularization)가 필요한데 전통적인 $\ell_1$-norm [^Ng.2000] 또는 $\ell_2$-norm [^Abbeel.2004]을 사용하는 대신 정책의 엔트로피를 최대화하는 방식 [^Ziebart.2008]이 제안되어 널리 사용되고 있다. 정책의 엔트로피를 최대화한다는 것은 한 번도 경험하지 못한 상태에서는 동일한 확률(최대 엔트로피)로 행동을 선택한다는 의미 [^Heim.2019]이며 이는 Jaynes의 최대 엔트로피 원리(MaxEnt) [^Kesavan.2009]를 응용한 것이다.
 
@@ -98,7 +98,7 @@ $$\begin{aligned}
 
 $$\hat\pi_E=\text{argmin}_{\pi\in\Pi}-H(\pi)+\psi^*(\rho_\pi-\rho_{\pi_E})\tag{12}$$
 
-여기서 $\psi^*$는 $\psi$의 볼록켤레함수(convex conjugate function)[^2]이다. 식 (11)의 네 번째 줄에서 $-\psi(c)+\sum_{s,a}\left[\rho_\pi(s,a)-\rho_{\pi_E}(s,a)\right]c(s,a)$를 최대화한다는 것은 볼록정규함수 $\psi(c)$를 최소화하면서 학습자의 방문빈도가 낮고 전문가의 방문빈도가 높은 상태-행동일수록($\rho_\pi(s,a)<\rho_{\pi_E}(s,a)$) 비용 $c(s,a)$를 최소화하고 반대인 경우 비용을 최대화한다는 의미이다. 이는 초기 IRL에서 전문가와 학습자의 피처벡터 마진을 최대화하는 비용함수를 구하는 것과 유사한 개념이다. 한편 함수 $\psi^*$는 학습자와 전문가의 점유도 차이를 인자(argument)로 하는 볼록함수이다. 식 (11)의 마직막 줄에서 $\psi^*$를 최소화한다는 것은 전문가 점유도와 최대한 유사한 점유도를 갖는 정책을 찾는 것을 의미하며 이는 전문가 정책에 최대한 근접한 학습자 정책을 찾는 것이라고 할 수 있다.
+여기서 $\psi^*$는 $\psi$의 볼록켤레함수(convex conjugate function)[^2]이다. 식 (11)의 네 번째 줄에서 $-\psi(c)+\sum_{s,a}\left[\rho_\pi(s,a)-\rho_{\pi_E}(s,a)\right]c(s,a)$를 최대화한다는 것은 볼록정규함수 $\psi(c)$를 최소화하면서 학습자의 방문빈도가 낮고 전문가의 방문빈도가 높은 상태-행동일수록($\rho_\pi(s,a)<\rho_{\pi_E}(s,a)$) 비용 $c(s,a)$를 최소화하고 반대인 경우 비용을 최대화한다는 의미이다. 이는 초기 IRL에서 전문가와 학습자의 피처벡터 마진을 최대화하는 비용함수를 구하는 것과 유사한 개념이다. 한편 함수 $\psi^\*$는 학습자와 전문가의 점유도 차이를 인자(argument)로 하는 볼록함수이다. 식 (11)의 마직막 줄에서 $\psi^\*$를 최소화한다는 것은 전문가 점유도와 최대한 유사한 점유도를 갖는 정책을 찾는 것을 의미하며 이는 전문가 정책에 최대한 근접한 학습자 정책을 찾는 것이라고 할 수 있다.
 
 요약하면 식 (11)은 전문가의 비용을 최소화하는 비용함수를 찾고 그 비용함수를 이용하여 전문가 정책에 최대한 근접한 정책을 구하는 과정을 표현한다.
 
