@@ -107,7 +107,7 @@ $$\hat\pi_E=\text{argmin}_{\pi\in\Pi}-H(\pi)+\psi^*(\rho_\pi-\rho_{\pi_E})\tag{1
 
 만약 비용함수에 대한 정규함수 $\psi$가 상수인 경우 최적화 관점에서 정규함수가 없는 것과 동일하며 식 (12)를 풀면 전문가의 점유도와 모든 상태-행동에서 동일한 점유도를 갖는 정책을 구할 수 있다. 하지만 이는 과도한 구속조건을 갖는 실용적이지 못한 방법이며 이를 완화하기 위한 $\psi$를 설계할 필요가 있다.
 
-초기 IRL 알고리즘은 비용함수공간 $\mathcal{C}$를 피처벡터의 선형조합 $\mathcal{C}\_{\text{linear}}=\{\sum_i w_i f_i:\|w\|_2\le1\}$ [^Abbeel.2004], $\{\sum_i w_i f_i:\sum_i w_i=1, w_i\ge0\ \forall i\}$ [^Syed.2008]에 한정한다. 즉, $\psi$가 식 (13)과 같이 $\mathcal{C}_{\text{linear}}$에 속할 때 0, 그렇지 않으면 $+\infty$ 값을 갖는 것과 동일하다.
+초기 IRL 알고리즘은 비용함수공간 $\mathcal{C}$를 피처벡터의 선형조합 $\mathcal{C}\_{\text{linear}}=\{\sum_i w_i f_i:\|w\|\_2\le1\}$ [^Abbeel.2004], $\{\sum_i w_i f_i:\sum_i w_i=1, w_i\ge0\ \forall i\}$ [^Syed.2008]에 한정한다. 즉, $\psi$가 식 (13)과 같이 $\mathcal{C}_{\text{linear}}$에 속할 때 0, 그렇지 않으면 $+\infty$ 값을 갖는 것과 동일하다.
 
 $$\psi_{\text{L}}=\left\{\begin{array}{ll}
 0 & \text{if}\ \ c\in\mathcal{C}_{\text{linear}} \\
