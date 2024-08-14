@@ -24,7 +24,7 @@ classes: wide
 
 $$V_R(\pi)=\mathbb{E}_{\pi}\left[R(s,a)\right]\tag{1}$$
 
-여기서 $t\ge0$에 대하여 $s_0\sim p_0$ (초기상태분포), $a_t\sim\pi(\cdot\vert s_t)$ (정책), $s_{t+1}\sim P(\cdot\vert s_t,a_t)$ (환경모델)이며 $\mathbb{E}_{\pi}\left[R(s,a)\right]\triangleq\mathbb{E}\left[\sum_{t=0}^\infty\gamma^t R(s_t,a_t)\right]$으로 정의된다.
+여기서 $t\ge0$에 대하여 $s_0\sim p_0$ (초기상태분포), $a_t\sim\pi(\cdot\vert s_t)$ (정책), $s_{t+1}\sim P(\cdot\vert s_t,a_t)$ (환경모델)이며 $\mathbb{E}\_{\pi}\left[R(s,a)\right]\triangleq\mathbb{E}\left[\sum_{t=0}^\infty\gamma^t R(s_t,a_t)\right]$으로 정의된다.
 
 문장 A는 아래의 두 문장으로 분리할 수 있다.
 
