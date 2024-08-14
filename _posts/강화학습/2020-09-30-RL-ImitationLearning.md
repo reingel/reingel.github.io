@@ -154,18 +154,18 @@ Figure 3. GAIL with PPO algorithm
 
 
 ## References
-[^Ng.2000]: A. Y. Ng and S. Russell, “Algorithm for Inverse Reinforcement Learning,” 2000.
-[^Abbeel.2004]: P. Abbeel and A. Y. Ng, “Apprenticeship learning via inverse reinforcement learning,” p. 1, 2004, doi: 10.1145/1015330.1015430.
-[^Ziebart.2008]: B. D. Ziebart, A. Maas, J. A. Bagnell, and A. K. Dey, “Maximum Entropy Inverse Reinforcement Learning,” 2008.
-[^Heim.2019]: E. Heim, “A Practitioner’s Guide to Maximum Causal Entropy Inverse Reinforcement Learning, Starting from Markov Decision Processes,” 2019.
-[^Kesavan.2009]: H. K. Kesavan, “Jaynes’ Maximum Entropy Principle (MaxEnt),” in Encyclopedia of Optimization, 2009.
-[^Ho.2016]: J. Ho and S. Ermon, “Generative Adversarial Imitation Learning,” Arxiv, 2016.
-[^Syed.2008]: U. Syed and R. E. Schapire, “A Game-Theoretic Approach to Apprenticeship Learning,” 2008.
-[^Goodfellow.2014]: I. J. Goodfellow et al., “Generative Adversarial Nets,” Advances in neural information processing systems, 2014.
-[^Schulman.2015]: J. Schulman, S. Levine, P. Moritz, M. I. Jordan, and P. Abbeel, “Trust Region Policy Optimization,” Arxiv, 2015.
-[^Schulman.2017]: J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal Policy Optimization Algorithms,” Arxiv, 2017.
-[^Todorov.2012]: E. Todorov, T. Erez, and Y. Tassa, “MuJoCo: A physics engine for model-based control,” 2012 Ieee Rsj Int Conf Intelligent Robots Syst, pp. 5026–5033, 2012, doi: 10.1109/iros.2012.6386109.
-[^Khrylx]: Ye Yuan, "PyTorch implementation of reinforcement learning algorithms," https://github.com/Khrylx/PyTorch-RL
+[^Ng.2000] A. Y. Ng and S. Russell, “Algorithm for Inverse Reinforcement Learning,” 2000.
+[^Abbeel.2004] P. Abbeel and A. Y. Ng, “Apprenticeship learning via inverse reinforcement learning,” p. 1, 2004, doi: 10.1145/1015330.1015430.
+[^Ziebart.2008] B. D. Ziebart, A. Maas, J. A. Bagnell, and A. K. Dey, “Maximum Entropy Inverse Reinforcement Learning,” 2008.
+[^Heim.2019] E. Heim, “A Practitioner’s Guide to Maximum Causal Entropy Inverse Reinforcement Learning, Starting from Markov Decision Processes,” 2019.
+[^Kesavan.2009] H. K. Kesavan, “Jaynes’ Maximum Entropy Principle (MaxEnt),” in Encyclopedia of Optimization, 2009.
+[^Ho.2016] J. Ho and S. Ermon, “Generative Adversarial Imitation Learning,” Arxiv, 2016.
+[^Syed.2008] U. Syed and R. E. Schapire, “A Game-Theoretic Approach to Apprenticeship Learning,” 2008.
+[^Goodfellow.2014] I. J. Goodfellow et al., “Generative Adversarial Nets,” Advances in neural information processing systems, 2014.
+[^Schulman.2015] J. Schulman, S. Levine, P. Moritz, M. I. Jordan, and P. Abbeel, “Trust Region Policy Optimization,” Arxiv, 2015.
+[^Schulman.2017] J. Schulman, F. Wolski, P. Dhariwal, A. Radford, and O. Klimov, “Proximal Policy Optimization Algorithms,” Arxiv, 2017.
+[^Todorov.2012] E. Todorov, T. Erez, and Y. Tassa, “MuJoCo: A physics engine for model-based control,” 2012 Ieee Rsj Int Conf Intelligent Robots Syst, pp. 5026–5033, 2012, doi: 10.1109/iros.2012.6386109.
+[^Khrylx] Ye Yuan, "PyTorch implementation of reinforcement learning algorithms," https://github.com/Khrylx/PyTorch-RL
 
 
 
