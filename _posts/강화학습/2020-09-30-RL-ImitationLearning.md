@@ -107,7 +107,7 @@ $$\hat\pi_E=\text{argmin}_{\pi\in\Pi}-H(\pi)+\psi^*(\rho_\pi-\rho_{\pi_E})\tag{1
 
 만약 비용함수에 대한 정규함수 $\psi$가 상수인 경우 최적화 관점에서 정규함수가 없는 것과 동일하며 식 (12)를 풀면 전문가의 점유도와 모든 상태-행동에서 동일한 점유도를 갖는 정책을 구할 수 있다. 하지만 이는 과도한 구속조건을 갖는 실용적이지 못한 방법이며 이를 완화하기 위한 $\psi$를 설계할 필요가 있다.
 
-초기 IRL 알고리즘은 비용함수공간 $\mathcal{C}$를 피처벡터의 선형조합 $\mathcal{C}_{\text{linear}}=\{\sum_i w_i f_i:\|w\|_2\le1\}$ [^Abbeel.2004], $\{\sum_i w_i f_i:\sum_i w_i=1, w_i\ge0\ \forall i\}$ [^Syed.2008]에 한정한다. 즉, $\psi$가 식 (13)과 같이 $\mathcal{C}_{\text{linear}}$에 속할 때 0, 그렇지 않으면 $+\infty$ 값을 갖는 것과 동일하다.
+초기 IRL 알고리즘은 비용함수공간 $\mathcal{C}$를 피처벡터의 선형조합 $\mathcal{C}\_{\text{linear}}=\{\sum_i w_i f_i:\|w\|_2\le1\}$ [^Abbeel.2004], $\{\sum_i w_i f_i:\sum_i w_i=1, w_i\ge0\ \forall i\}$ [^Syed.2008]에 한정한다. 즉, $\psi$가 식 (13)과 같이 $\mathcal{C}_{\text{linear}}$에 속할 때 0, 그렇지 않으면 $+\infty$ 값을 갖는 것과 동일하다.
 
 $$\psi_{\text{L}}=\left\{\begin{array}{ll}
 0 & \text{if}\ \ c\in\mathcal{C}_{\text{linear}} \\
@@ -135,7 +135,7 @@ Figure 2에 GAIL 알고리즘을 도시화하였다. $G$ 모델을 학습하기 
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/8b02a782b0f2492c8204a3e58bdebf20.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/강화학습/8b02a782b0f2492c8204a3e58bdebf20.png" | relative_url}}' width="800"><br>
 <br>
 Figure 2. Generative adversarial imitation learning
 <br>
@@ -144,7 +144,7 @@ Figure 2. Generative adversarial imitation learning
 
 
 <center>
-  <img src='{{"/assets/img/강화학습/838956f8e0d847c7b6dead536d8c17d0.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/강화학습/838956f8e0d847c7b6dead536d8c17d0.png" | relative_url}}' width="800"><br>
 <br>
 Figure 3. GAIL with PPO algorithm
 <br>
@@ -171,5 +171,5 @@ Figure 3. GAIL with PPO algorithm
 
 ---
 [^1]: 이와 같이 보상함수를 찾는 과정만을 IRL이라고 표현하는 문헌도 있다. 이런 경우에는 최적정책까지 구하는 전 과정을 도제학습(apprenticeship learning)이라고 부르기도 한다.
-[^2]: $f^*(x):\sup_{y}x^T y-f(y)$, $f(x)$가 non-convex 하더라도 $f^*(x)$는 convex 하다.
+[^2]: $f^\*(x):\sup_{y}x^T y-f(y)$, $f(x)$가 non-convex 하더라도 $f^\*(x)$는 convex 하다.
 [^3]: $D_{\text{JS}}(P\|Q)=\frac{1}{2}D_{\text{KL}}(P\|\frac{P+Q}{2})+\frac{1}{2}D_{\text{KL}}(Q\|\frac{P+Q}{2})$ where, $D_{\text{KL}}(P\|Q)=\sum_x(P\log\frac{P}{Q})$
