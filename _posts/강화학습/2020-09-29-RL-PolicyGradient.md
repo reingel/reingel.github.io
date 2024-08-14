@@ -143,7 +143,5 @@ Figure 2. Deterministic Policy-Gradient (DPG)
 
 ---
 [^1]: 이산행동공간을 다루는 실제 강화학습에서는 $Q_\pi(a_t\vert s_t)$를 $\mathbf{Q}_\pi(s_t)$ 형태로 변형하여 모든 행동에 대한 확률분포를 벡터형태로 한 번에 받을 수 있다. 하지만 연속행동공간인 경우 상태와 행동을 입력하면 그에 대한 가치를 얻는 $Q_\pi(s_t,a_t)$의 형태로 구성할 수 밖에 없다. 이러한 경우 $\text{argmax}_{a}Q_\pi(s_t,a)$를 구하기 위하여 함수최적화 문제를 풀어야 한다.
-
 [^2]: $v_\pi(s_0)=v_{\pi_{\theta}}(s_0)$
-
 [^3]: $\mathbb{E}_\pi=\mathbb{E}_{\pi_{\theta}}$
