@@ -1,5 +1,5 @@
 ---
-title: "RL: Value function methods"
+title: "강화학습: 가치함수법(Value function methods)"
 last_modified_at: 2020-09-28
 categories:
   - 강화학습

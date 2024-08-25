@@ -1,5 +1,5 @@
 ---
-title: "RL: Imitation Learning"
+title: "강화학습: 모방학습(Imitation Learning)"
 last_modified_at: 2020-09-30
 categories:
   - 강화학습

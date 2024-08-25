@@ -1,5 +1,5 @@
 ---
-title: "RL: Policy-gradient methods"
+title: "강화학습: 정책경사법(Policy-gradient methods)"
 last_modified_at: 2020-09-29
 categories:
   - 강화학습

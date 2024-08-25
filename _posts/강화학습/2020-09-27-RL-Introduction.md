@@ -1,5 +1,5 @@
 ---
-title: "RL: Introduction"
+title: "강화학습: 개요(Introduction)"
 last_modified_at: 2020-09-27
 categories:
   - 강화학습
