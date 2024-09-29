@@ -13,6 +13,8 @@ Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equiva
 
 -   **The equation** $\mathbf{x}^{\*}\mathbf{\text{Ax}}$ **can be seen as the dot product of** $\mathbf{x}$ **and** $\mathbf{\text{Ax}}$**, which means untransformed and transformed vectors.** Since $\text{Ax}$ is in the same direction, the dot product $x^{\*}\text{Ax}$ should be positive.
 
+\* MATLAB code can be found [here](/assets/attachment/TransformMatrix.m) and [here](/assets/attachment/posDef.m).
+
 <center>
   <img src='{{"/assets/img/Positive-definite Matrix/PDM 1.png" | relative_url}}' width="800"><br>
 <br>
@@ -60,8 +62,6 @@ Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equiva
 <br>
 <br>
 </center>
-
-MATLAB code can be found [here](/assets/attachment/TransformMatrix.m) and [here](/assets/attachment/posDef.m).
 
 
 ## 2.  Its leading principal minors are all positive. (Sylvester's criterion)
