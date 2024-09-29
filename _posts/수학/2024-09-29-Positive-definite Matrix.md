@@ -1,6 +1,3 @@
-
-# Positive-definite Matrix
-
 In linear algebra, an $n \times n$ Hermitian matrix $A$ is said to be positive definite if the scalar $x^{\*}\text{Ax}$ is real and positive for all non-zero column vectors $x$ of $n$ complex numbers. Here $x^{\*}$ denotes the conjugate transpose of $x$.
 
 Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equivalent to $A$ being positive definite:
