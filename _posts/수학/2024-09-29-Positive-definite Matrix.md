@@ -1,7 +1,7 @@
 
 # Positive-definite Matrix
 
-In linear algebra, an $n \times n$ Hermitian matrix $A$ is said to be positive definite if the scalar $x^{*}\text{Ax}$ is real and positive for all non-zero column vectors $x$ of $n$ complex numbers. Here $x^{*}$ denotes the conjugate transpose of $x$.
+In linear algebra, an $n \times n$ Hermitian matrix $A$ is said to be positive definite if the scalar $x^{\*}\text{Ax}$ is real and positive for all non-zero column vectors $x$ of $n$ complex numbers. Here $x^{\*}$ denotes the conjugate transpose of $x$.
 
 Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equivalent to $A$ being positive definite:
 
@@ -11,7 +11,7 @@ Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equiva
 
 -   If all eigenvalues are positive, every vector is enlarged by the matrix and, thus, is in the same direction.
 
--   **The equation** $\mathbf{x}^{*}\mathbf{\text{Ax}}$ **can be seen as the dot product of** $\mathbf{x}$ **and** $\mathbf{\text{Ax}}$**, which means untransformed and transformed vectors.** Since $\text{Ax}$ is in the same direction, the dot product $x^{*}\text{Ax}$ should be positive.
+-   **The equation** $\mathbf{x}^{\*}\mathbf{\text{Ax}}$ **can be seen as the dot product of** $\mathbf{x}$ **and** $\mathbf{\text{Ax}}$**, which means untransformed and transformed vectors.** Since $\text{Ax}$ is in the same direction, the dot product $x^{\*}\text{Ax}$ should be positive.
 
 <center>
   <img src='{{"/assets/img/Positive-definite Matrix/PDM 1.png" | relative_url}}' width="500"><br>
@@ -20,43 +20,43 @@ Let $A$ be an $n \times n$ Hermitian matrix. The following properties are equiva
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 2.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 2.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 3.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 3.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 4.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 4.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 5.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 5.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 6.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 6.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 7.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 7.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
 
 <center>
-  <img src='{{"/assets/img/Positive-definite Matrix/PDM 8.png" | relative_url}}' width="500"><br>
+  <img src='{{"/assets/img/Positive-definite Matrix/PDM 8.png" | relative_url}}' width="800"><br>
 <br>
 <br>
 </center>
