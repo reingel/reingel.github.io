@@ -11,7 +11,7 @@ use_math: true
 classes: wide
 ---
 
-•	The **Laplace Transform** and **$z$-Transform** (along with other integral transforms such as the **Wavelet Transform**) are often studied within the framework of **functional analysis**, particularly within the context of **Hilbert spaces** (complete inner product spaces).
+•	The **Laplace Transform** and **$z$-Transform** (along with other integral transforms such as the **Wavelet Transform**) are based on the concept of **Hilbert spaces** (vector space with inner product).
 •	The $z$-Transform is the discrete-time analogue of the Laplace Transform, often used for analyzing discrete-time signals and systems.
 
 *c.f.* The **Fourier Transform** can be viewed as a special case of the Laplace Transform, where the complex variable $s$ in the Laplace domain is restricted to the imaginary axis (i.e., $s=j\omega$, where $j$ is the imaginary unit and $\omega$ is the frequency).
